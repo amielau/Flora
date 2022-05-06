@@ -1,7 +1,7 @@
 # Flora
 
 # Description
-Devmountain Specs Capstone Project- website for plant care, tracking, and maintenance
+Site that facilitates easier plant care, tracking, and maintenance
 
 # MVP
 * users can keep tabs on each plant owned
