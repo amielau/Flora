@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-# Flora
-
-# Description
-Site that facilitates easier plant care, tracking, and maintenance
-
-# MVP
-* users can keep tabs on each plant owned
-* users can find care intructions for each plant
-* users are able track watering
-* users can track other maintenace such as plant trimming days
-* users should have access to Home, My Plants, care, Add A Plant, and profile tabs
-=======
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -81,4 +68,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
->>>>>>> 7eb40a2 (Initial commit)

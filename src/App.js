@@ -1,20 +1,16 @@
-import "./App.css";
-import AddPlant from "./components/AddPlant";
-import Care from "./components/Care";
-import Home from "./components/Home";
-import MyPlants from "./components/MyPlants";
-import Profile from "./components/Profile";
+import React from 'react'
+import AppContainer from './main/AppContainer'
+import Authenticate from './main/Authenticate'
+import { Routes, Route } from 'react-router-dom'
 
 function App() {
+  // useAuthenticate()
   return (
-    <div className="App">
-      <AddPlant />
-      <Care />
-      <Home />
-      <MyPlants />
-      <Profile />
-    </div>
-  );
+    <Routes>
+      <Route path='/authenticate' element={<Authenticate />} />
+      <Route path='/*' element={<AppContainer />} />
+    </Routes>
+  )
 }
 
-export default App;
+export default App
