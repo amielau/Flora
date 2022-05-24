@@ -1,39 +1,61 @@
 import React, { useState } from 'react'
 import './Authenticate.css'
-import Form from 'react-bootstrap/Form'
-import { Button } from '@mui/material'
+import { Form, Input, Button, Checkbox } from 'antd'
+import { UserOutlined, LockOutlined } from '@ant-design/icons'
 
-function Authenticate() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-
-  function validateForm() {
-    return email.length > 0 && password.length > 0
+const Authenticate = () => {
+  const onFinish = values => {
+    console.log('Received values of form: ', values)
   }
 
-  function handleSubmit(event) {
-    event.preventDefault()
-  }
   return (
-    <div className='Login'>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group size='lg' controlId='email'>
-          <Form.Label>Email</Form.Label>
+    <Form
+      name='normal_login'
+      className='login-form'
+      initialValues={{
+        remember: true,
+      }}
+      onFinish={onFinish}
+    >
+      <Form.Item
+        name='username'
+        rules={[
+          {
+            required: true,
+            message: 'Please input your Username!',
+          },
+        ]}
+      >
+        <Input prefix={<UserOutlined className='site-form-item-icon' />} placeholder='Username' />
+      </Form.Item>
+      <Form.Item
+        name='password'
+        rules={[
+          {
+            required: true,
+            message: 'Please input your Password!',
+          },
+        ]}
+      >
+        <Input prefix={<LockOutlined className='site-form-item-icon' />} type='password' placeholder='Password' />
+      </Form.Item>
+      <Form.Item>
+        <Form.Item name='remember' valuePropName='checked' noStyle>
+          <Checkbox>Remember me</Checkbox>
+        </Form.Item>
 
-          <Form.Control autoFocus type='email' value={email} onChange={e => setEmail(e.target.value)} />
-        </Form.Group>
+        <a className='login-form-forgot' href=''>
+          Forgot password
+        </a>
+      </Form.Item>
 
-        <Form.Group size='lg' controlId='password'>
-          <Form.Label>Password</Form.Label>
-
-          <Form.Control type='password' value={password} onChange={e => setPassword(e.target.value)} />
-        </Form.Group>
-
-        <Button block size='lg' type='submit' disabled={!validateForm()}>
-          Login
+      <Form.Item>
+        <Button type='primary' htmlType='submit' className='login-form-button'>
+          Log in
         </Button>
-      </Form>
-    </div>
+        Or <a href=''>register now!</a>
+      </Form.Item>
+    </Form>
   )
 }
 

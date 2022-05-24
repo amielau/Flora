@@ -10,7 +10,7 @@ import CssBaseline from '@mui/material/CssBaseline'
 
 import App from './App'
 
-import './index.css'
+import './index.less'
 
 // customize later
 const theme = createTheme({
