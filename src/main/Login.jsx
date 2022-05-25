@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import { LockOutlined, UserOutlined } from '@ant-design/icons'
+import { Button, Checkbox, Form, Input } from 'antd'
+import React from 'react'
 import '../index.less'
-import { Form, Input, Button, Checkbox } from 'antd'
-import { UserOutlined, LockOutlined } from '@ant-design/icons'
-const Authenticate = () => {
+
+const Login = () => {
   const onFinish = values => {
     console.log('Received values of form: ', values)
   }
@@ -60,4 +61,4 @@ const Authenticate = () => {
   )
 }
 
-export default Authenticate
+export default Login
