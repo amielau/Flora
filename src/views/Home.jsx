@@ -8,6 +8,8 @@ const words = [
   'Someone has been adding soil to my garden. The plot thickens',
   'Im very frond of you.',
   'Scarecrows are always garden their patch',
+  'I feel sorry for wheelbarrows. Theyre always getting pushed around',
+  'My fear of roses is a thorny issue. Im not sure what it stems from but Im stuck with it.',
 ]
 
 function Home() {
@@ -32,7 +34,7 @@ function Home() {
     }
     const timeout = setTimeout(() => {
       setSubIndex(prev => prev + (reverse ? -1 : 1))
-    }, 200)
+    }, 400)
 
     return () => clearTimeout(timeout)
   }, [subIndex, index, reverse])
@@ -43,7 +45,6 @@ function Home() {
     <div className='Home'>
       <video src={capstoneVid} autoPlay loop muted />
       <div className='content'>
-        <h1>About Flora</h1>
         {/* self-typing feature */}
         <h1>{`${words[index].substring(0, subIndex)}`}</h1>
         {/* self-typing feature */}

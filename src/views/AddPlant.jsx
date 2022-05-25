@@ -42,7 +42,7 @@ const AddPlant = () => {
       </Stack>
       <Button variant='contained' onClick={attemptSubmit}>
         {' '}
-        Login
+        Submit
       </Button>
     </Container>
   )

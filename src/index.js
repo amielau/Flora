@@ -73,6 +73,16 @@ const globalStyles = (
         flex: 1,
         minHeight: 0,
       },
+      '.content': {
+        position: 'absolute',
+        width: '100%',
+        height: '100%',
+        top: '0',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        hShadow: '#2c2a24',
+      },
     }}
   />
 )
