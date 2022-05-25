@@ -3,7 +3,7 @@ import React from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router'
 
-const Login = () => {
+const Register = () => {
   const navigate = useNavigate()
   const { control, handleSubmit } = useForm()
 
@@ -15,7 +15,7 @@ const Login = () => {
     <Container maxWidth='xs' sx={{ display: 'flex', flexDirection: 'column' }}>
       <Box flex='1 1 auto' />
       <Stack spacing={2} flex='2 2 auto'>
-        <Typography variant='h3'>Login</Typography>
+        <Typography variant='h3'>Create Account</Typography>
         <Controller
           name='username'
           control={control}
@@ -28,16 +28,27 @@ const Login = () => {
           rules={{ required: true }}
           render={({ field }) => <TextField type='password' label='Password' {...field} />}
         />
+        <Controller
+          name='fullName'
+          control={control}
+          rules={{ required: true }}
+          render={({ field }) => <TextField label='Full Name' {...field} />}
+        />
+        <Controller
+          name='email'
+          control={control}
+          rules={{ required: true }}
+          render={({ field }) => <TextField type='email' label='Email' {...field} />}
+        />
         <Button onClick={attemptSubmit} size='large' variant='contained'>
           Submit
         </Button>
-        <Button onClick={() => navigate('/register')} variant='flat' size='large'>
-          Create Account
+        <Button onClick={() => navigate('/login')} variant='flat' size='large'>
+          I Already Have an Account
         </Button>
       </Stack>
-      <Box flex='2 2 auto' />
     </Container>
   )
 }
 
-export default Login
+export default Register
