@@ -37,6 +37,8 @@ function Home() {
     return () => clearTimeout(timeout)
   }, [subIndex, index, reverse])
 
+  //self-typing
+
   return (
     <div className='Home'>
       <video src={capstoneVid} autoPlay loop muted />
