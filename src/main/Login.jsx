@@ -10,9 +10,9 @@ const Login = () => {
   })
 
   return (
-    <Container minWidth='xs' sx={{ display: 'flex', flexDirection: 'column' }}>
-      <Box />
-      <Stack spacing={2}>
+    <Container maxWidth='xs' sx={{ display: 'flex', flexDirection: 'column' }}>
+      <Box flex='1 1 auto' />
+      <Stack spacing={2} flex='2 2 auto'>
         <Typography variant='h3'>Login</Typography>
         <Controller
           name='username'
@@ -26,11 +26,11 @@ const Login = () => {
           rules={{ required: true }}
           render={({ field }) => <TextField type='password' label='Password' {...field} />}
         />
-        <Button onClick={attemptSubmit} size='large'>
+        <Button onClick={attemptSubmit} size='large' variant='contained'>
           Submit
         </Button>
       </Stack>
-      <Box />
+      <Box flex='2 2 auto' />
     </Container>
   )
 }
