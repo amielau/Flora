@@ -1,60 +1,37 @@
+import { Box, Button, Container, Stack, TextField, Typography } from '@mui/material'
 import React from 'react'
+import { Controller, useForm } from 'react-hook-form'
 
 const Login = () => {
-  const onFinish = values => {
-    console.log('Received values of form: ', values)
-  }
+  const { control, handleSubmit } = useForm()
+
+  const attemptSubmit = handleSubmit(values => {
+    console.log('values', values)
+  })
 
   return (
-    <>
-      <div className='login-form-container'>
-        <Form
-          name='normal_login'
-          className='login-form'
-          initialValues={{
-            remember: true,
-          }}
-          onFinish={onFinish}
-        >
-          <Form.Item
-            name='username'
-            rules={[
-              {
-                required: true,
-                message: 'Please input your Username!',
-              },
-            ]}
-          >
-            <Input prefix={<UserOutlined className='site-form-item-icon' />} placeholder='Username' />
-          </Form.Item>
-          <Form.Item
-            name='password'
-            rules={[
-              {
-                required: true,
-                message: 'Please input your Password!',
-              },
-            ]}
-          >
-            <Input
-              prefix={<LockOutlined className='site-form-item-icon' />}
-              type='password'
-              placeholder='Password'
-            />
-          </Form.Item>
-          <Form.Item name='remember' valuePropName='checked' noStyle>
-            <Checkbox>Remember me</Checkbox>
-          </Form.Item>
-
-          <Form.Item>
-            <Button type='primary' htmlType='submit' className='login-form-button'>
-              Log in
-            </Button>
-            Or <a href='Register'>register now!</a>
-          </Form.Item>
-        </Form>
-      </div>
-    </>
+    <Container minWidth='xs' sx={{ display: 'flex', flexDirection: 'column' }}>
+      <Box />
+      <Stack spacing={2}>
+        <Typography variant='h3'>Login</Typography>
+        <Controller
+          name='username'
+          control={control}
+          rules={{ required: true }}
+          render={({ field }) => <TextField label='Username' {...field} />}
+        />
+        <Controller
+          name='password'
+          control={control}
+          rules={{ required: true }}
+          render={({ field }) => <TextField type='password' label='Password' {...field} />}
+        />
+        <Button onClick={attemptSubmit} size='large'>
+          Submit
+        </Button>
+      </Stack>
+      <Box />
+    </Container>
   )
 }
 
