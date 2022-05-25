@@ -14,14 +14,14 @@ import {
 import { ExpandMoreIcon, MoreVertIcon } from '@mui/icons-material'
 
 function MyPlants() {
-  return {}
+  return (
+    <div>
+      <Button>MyPlants</Button>
+      <div>
+        <Card sx={{ maxWidth: 345 }}></Card>
+      </div>
+    </div>
+  )
 }
-//     <div>
-//       <Button>MyPlants</Button>
-//       <div>
-//         <Card sx={{ maxWidth: 345 }}></Card>
-//       </div>
-//     </div>
-//   )
-// }
+
 export default MyPlants

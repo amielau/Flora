@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { AppBar as MuiAppBar, Toolbar, IconButton, styled, Typography, Box } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import { useNavigate } from 'react-router-dom'
+
+// words arr self-typing
+const words = ['test1', 'test2']
 
 const StyledAppBar = styled(MuiAppBar, {
   shouldForwardProp: prop => prop !== 'open' && prop !== 'drawerWidth' && prop !== 'headerHeight',
@@ -45,6 +48,9 @@ function AppBar({ open, drawerWidth, onClickOpen, headerHeight }) {
           <Typography variant='h2' noWrap component='div' sx={{ color: '#dcddce', fontFamily: 'Abril Fatface' }}>
             Flora
           </Typography>
+          {/* self-typing feature */}
+          <h1></h1>
+          {/* self-typing feature */}
         </Box>
       </Toolbar>
     </StyledAppBar>
