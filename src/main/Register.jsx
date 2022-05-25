@@ -2,13 +2,20 @@ import { Box, Button, Container, Stack, TextField, Typography } from '@mui/mater
 import React from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router'
+import { useCreateAccount } from '../hooks/useCreateAccount'
 
 const Register = () => {
   const navigate = useNavigate()
-  const { control, handleSubmit } = useForm()
+  const { submit } = useCreateAccount()
 
-  const attemptSubmit = handleSubmit(values => {
-    console.log('values', values)
+  const { control, handleSubmit } = useForm({
+    defaultValues: { username: '', password: '', fullName: '', email: '' },
+  })
+
+  const attemptSubmit = handleSubmit(async values => {
+    await submit(values, () => {
+      console.log('callback')
+    })
   })
 
   return (

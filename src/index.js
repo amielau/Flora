@@ -6,6 +6,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
+import { RecoilRoot } from 'recoil'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 
@@ -83,7 +84,9 @@ ReactDOM.render(
       {globalStyles}
       <BrowserRouter>
         <LocalizationProvider dateAdapter={DateAdapter}>
-          <App />
+          <RecoilRoot>
+            <App />
+          </RecoilRoot>
         </LocalizationProvider>
       </BrowserRouter>
     </React.Fragment>
