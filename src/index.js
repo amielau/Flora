@@ -1,16 +1,13 @@
+import DateAdapter from '@mui/lab/AdapterLuxon'
+import LocalizationProvider from '@mui/lab/LocalizationProvider'
+import CssBaseline from '@mui/material/CssBaseline'
+import GlobalStyles from '@mui/material/GlobalStyles'
+import { createTheme, ThemeProvider } from '@mui/material/styles'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
-import reportWebVitals from './reportWebVitals'
-import LocalizationProvider from '@mui/lab/LocalizationProvider'
-import DateAdapter from '@mui/lab/AdapterLuxon'
-import { createTheme, ThemeProvider } from '@mui/material/styles'
-import GlobalStyles from '@mui/material/GlobalStyles'
-import CssBaseline from '@mui/material/CssBaseline'
-
 import App from './App'
-
-import './index.less'
+import reportWebVitals from './reportWebVitals'
 
 // customize later
 const theme = createTheme({

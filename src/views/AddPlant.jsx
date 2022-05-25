@@ -1,14 +1,13 @@
+import { Box, Button } from '@mui/material'
+import { DatePicker, Form, Input, Select, Switch } from 'antd'
 import React, { useEffect, useState } from 'react'
-import { DatePicker, Form, Input, Radio, Select, Switch, Image } from 'antd'
-import { styled } from '@mui/material/styles'
-import { Button, Box } from '@mui/material'
-import DateTimePicker from '@mui/lab/DateTimePicker'
 
 const AddPlant = () => {
   const [componentSize, setComponentSize] = useState('default')
 
   // select image //
   const [selectedImage, setSelectedImage] = useState(null)
+
   const [imageUrl, setImageUrl] = useState(null)
   useEffect(() => {
     if (selectedImage) {
