@@ -10,6 +10,8 @@ const words = [
   'Scarecrows are always garden their patch',
   'I feel sorry for wheelbarrows. Theyre always getting pushed around',
   'My fear of roses is a thorny issue. Im not sure what it stems from but Im stuck with it.',
+  'Im rooting for you!',
+  'Its mint to be.',
 ]
 
 function Home() {

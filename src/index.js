@@ -73,6 +73,7 @@ const globalStyles = (
         flex: 1,
         minHeight: 0,
       },
+      // self-typing content styling
       '.content': {
         position: 'absolute',
         width: '100%',
@@ -81,7 +82,6 @@ const globalStyles = (
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        hShadow: '#2c2a24',
       },
     }}
   />
