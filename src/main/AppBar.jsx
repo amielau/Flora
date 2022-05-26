@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import { AppBar as MuiAppBar, Toolbar, IconButton, styled, Typography, Box } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
+import { AppBar as MuiAppBar, Box, IconButton, styled, Toolbar, Typography } from '@mui/material'
+import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const StyledAppBar = styled(MuiAppBar, {
