@@ -78,10 +78,17 @@ const globalStyles = (
         position: 'absolute',
         width: '100%',
         height: '100%',
-        top: '0',
+        top: '250px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        right: '5px',
+      },
+      video: {
+        display: 'flex',
+        flex: '1',
+        position: 'fixed',
+        right: '0',
       },
     }}
   />

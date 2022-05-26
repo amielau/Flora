@@ -1,4 +1,4 @@
 function Care() {
-  return
+  return <div>hello</div>
 }
 export default Care
