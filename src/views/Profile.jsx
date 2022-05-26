@@ -18,6 +18,8 @@ function Profile() {
         flexDirection: 'column',
         flex: '1 1 auto',
         justifyContent: 'space-between',
+        paddingTop: 4,
+        paddingBottom: 4,
       }}
     >
       <Stack spacing={4}>
@@ -35,7 +37,6 @@ function Profile() {
         </Stack>
         <img src='' alt='' />
       </Stack>
-      <Divider />
       <Stack spacing={4}>
         <Button variant='outlined'> Write A Review</Button>
         <Button onClick={handleLogout} variant='outlined'>

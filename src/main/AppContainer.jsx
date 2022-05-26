@@ -101,7 +101,7 @@ function AppContainer() {
           ))}
         </List>
       </Drawer>
-      <Container sx={{ mt: headerHeight }}>
+      <Container>
         <DrawerHeader />
         <Routes />
       </Container>
