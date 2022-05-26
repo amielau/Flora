@@ -20,10 +20,20 @@ export const useAuthenticate = () => {
     [post, setToken, setUser],
   )
 
+  const logout = useCallback(
+    onComplete => {
+      setToken(null)
+      setUser({})
+      onComplete()
+    },
+    [setToken, setUser],
+  )
+
   return {
     token,
     user,
     login,
+    logout,
     isActive,
   }
 }

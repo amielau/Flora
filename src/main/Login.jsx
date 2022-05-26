@@ -1,14 +1,23 @@
 import { Box, Button, Container, Stack, TextField, Typography } from '@mui/material'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router'
+import { useAuthenticate } from '../hooks/useAuthenticate'
 
 const Login = () => {
   const navigate = useNavigate()
-  const { control, handleSubmit } = useForm()
+  const { login, token } = useAuthenticate()
 
-  const attemptSubmit = handleSubmit(values => {
-    console.log('values', values)
+  useEffect(() => {
+    if (token) {
+      navigate('/')
+    }
+  }, [token, navigate])
+
+  const { control, handleSubmit } = useForm({ defaultValues: { username: '', password: '' } })
+
+  const attemptSubmit = handleSubmit(async values => {
+    await login(values, () => navigate('/'))
   })
 
   return (

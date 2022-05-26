@@ -7,15 +7,13 @@ import Profile from '../views/Profile'
 
 const MainRoutes = () => {
   return (
-    <div>
-      <Routes>
-        <Route exact path='/' element={<Home />} />
-        <Route path='/addPlant' element={<AddPlant />} />
-        <Route path='/care' element={<Care />} />
-        <Route path='/myPlants' element={<MyPlants />} />
-        <Route path='/profile' element={<Profile />} />
-      </Routes>
-    </div>
+    <Routes>
+      <Route exact path='/' element={<Home />} />
+      <Route path='/addPlant' element={<AddPlant />} />
+      <Route path='/care' element={<Care />} />
+      <Route path='/myPlants' element={<MyPlants />} />
+      <Route path='/profile' element={<Profile />} />
+    </Routes>
   )
 }
 

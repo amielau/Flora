@@ -1,15 +1,15 @@
-import React from 'react'
-import { Drawer as MuiDrawer, Box, Divider, IconButton, List, useTheme, styled } from '@mui/material'
-import YardIcon from '@mui/icons-material/Yard'
-import FaceIcon from '@mui/icons-material/Face'
 import AddCircleIcon from '@mui/icons-material/AddCircle'
-import CottageIcon from '@mui/icons-material/Cottage'
-import FavoriteIcon from '@mui/icons-material/Favorite'
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight'
-import Routes from './Routes'
+import CottageIcon from '@mui/icons-material/Cottage'
+import FaceIcon from '@mui/icons-material/Face'
+import FavoriteIcon from '@mui/icons-material/Favorite'
+import YardIcon from '@mui/icons-material/Yard'
+import { Box, Container, Divider, Drawer as MuiDrawer, IconButton, List, styled, useTheme } from '@mui/material'
+import React from 'react'
 import AppBar from './AppBar'
 import NavItem from './NavItem'
+import Routes from './Routes'
 
 const drawerWidth = 240
 const headerHeight = '70px'
@@ -73,7 +73,7 @@ function AppContainer() {
   }
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex', flex: '1' }}>
       <AppBar open={open} onClickOpen={handleDrawerOpen} drawerWidth={drawerWidth} headerHeight={headerHeight} />
       <Drawer variant='permanent' open={open}>
         <DrawerHeader>
@@ -101,10 +101,10 @@ function AppContainer() {
           ))}
         </List>
       </Drawer>
-      <Box component='main' sx={{ flexGrow: 1, p: 3 }}>
+      <Container sx={{ mt: headerHeight }}>
         <DrawerHeader />
         <Routes />
-      </Box>
+      </Container>
     </Box>
   )
 }

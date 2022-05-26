@@ -1,21 +1,25 @@
 import { Box, Button, Container, Stack, TextField, Typography } from '@mui/material'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router'
 import { useCreateAccount } from '../hooks/useCreateAccount'
 
 const Register = () => {
   const navigate = useNavigate()
-  const { submit } = useCreateAccount()
+  const { submit, token } = useCreateAccount()
+
+  useEffect(() => {
+    if (token) {
+      navigate('/')
+    }
+  }, [token, navigate])
 
   const { control, handleSubmit } = useForm({
     defaultValues: { username: '', password: '', fullName: '', email: '' },
   })
 
   const attemptSubmit = handleSubmit(async values => {
-    await submit(values, () => {
-      console.log('callback')
-    })
+    await submit(values, () => navigate('/'))
   })
 
   return (

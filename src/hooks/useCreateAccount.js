@@ -17,7 +17,7 @@ export const useCreateAccount = () => {
       setUser(user)
       onSuccess()
     },
-    [post],
+    [post, setToken, setUser],
   )
 
   return {
