@@ -101,7 +101,7 @@ function AppContainer() {
           ))}
         </List>
       </Drawer>
-      <Container>
+      <Container sx={{ overflowY: 'auto', paddingBottom: '24px' }}>
         <DrawerHeader />
         <Routes />
       </Container>

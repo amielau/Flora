@@ -14,6 +14,7 @@ const MyPlants = () => {
         <Box sx={{ height: '4px' }} />
       )}
       <Stack
+        id='my-plants-stack'
         spacing={1}
         sx={{
           display: 'flex',

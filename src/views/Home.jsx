@@ -37,7 +37,7 @@ function Home() {
     }
     const timeout = setTimeout(() => {
       setSubIndex(prev => prev + (reverse ? -1 : 1))
-    }, 100)
+    }, 200)
 
     return () => clearTimeout(timeout)
   }, [subIndex, index, reverse])

@@ -96,8 +96,6 @@ const globalStyles = (
   />
 )
 
-console.log('THEME', theme)
-
 ReactDOM.render(
   <ThemeProvider theme={theme}>
     <React.Fragment>

@@ -1,15 +1,18 @@
+import React, { useState, useEffect, useCallback } from 'react'
 import { Box, Button, FormControlLabel, Stack, Switch, TextField, Typography } from '@mui/material'
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker'
-import React from 'react'
 import { Controller, useFieldArray, useForm } from 'react-hook-form'
 import { useAddPlant } from './plants/hooks/useAddPlant'
 
 const defaultValues = { type: '', nickname: '', careInst: '', waterDaily: false }
 
 const AddPlant = () => {
+  const [selectedImage, setSelectedImage] = useState(null)
+  const [imageUrl, setImageUrl] = useState(null)
+
   const { save } = useAddPlant()
 
-  const { handleSubmit, control } = useForm({
+  const { handleSubmit, control, reset } = useForm({
     defaultValues,
   })
 
@@ -20,10 +23,39 @@ const AddPlant = () => {
 
   const attemptSubmit = handleSubmit(async values => {
     await save(values)
+
+    setSelectedImage(null)
+    reset(defaultValues)
   })
+
+  useEffect(() => {
+    if (selectedImage) {
+      setImageUrl(URL.createObjectURL(selectedImage))
+    }
+  }, [selectedImage])
 
   return (
     <Stack spacing={3}>
+      {/* file input starts */}
+      <input
+        accept='image/*'
+        type='file'
+        id='select-image'
+        style={{ display: 'none' }}
+        onChange={e => setSelectedImage(e.target.files[0])}
+      />
+      <label htmlFor='select-image'>
+        <Button variant='contained' color='primary' component='span'>
+          Upload Image
+        </Button>
+      </label>
+      {imageUrl && selectedImage && (
+        <Box mt={2} textAlign='center'>
+          <div>Image Preview:</div>
+          <img src={imageUrl} alt={selectedImage.name} height='100px' />
+        </Box>
+      )}
+      {/* file input ends */}
       <Controller
         name='type'
         control={control}

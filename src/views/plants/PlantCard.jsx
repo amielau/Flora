@@ -22,7 +22,12 @@ const PlantCard = ({ plant }) => {
   }
 
   return (
-    <Card key={plant.id} elevation={4}>
+    <Card
+      key={plant.id}
+      elevation={4}
+      id='thisOne'
+      sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}
+    >
       <CardHeader avatar={<FilterVintageIcon />} title={plant.nickname} />
       <CardActions disableSpacing>
         <ExpandMore expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label='show more'>
