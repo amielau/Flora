@@ -84,8 +84,8 @@ function AppContainer() {
         <Divider />
         <List>
           {[
-            { text: 'Profile', Icon: FaceIcon, route: '/profile' },
             { text: 'Home', Icon: CottageIcon, route: '/' },
+            { text: 'Profile', Icon: FaceIcon, route: '/profile' },
           ].map(({ text, Icon, route }, index) => (
             <NavItem key={text} open={open} text={text} Icon={Icon} route={route} />
           ))}
