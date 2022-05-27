@@ -28,7 +28,7 @@ const theme = createTheme({
   palette: {
     background: {
       default: '#2c2a24',
-      paper: '#2c2a24',
+      paper: '#34322D',
     },
     primary: {
       main: '#dcddce',
@@ -38,14 +38,17 @@ const theme = createTheme({
     },
     text: {
       primary: '#dcddce',
-      secondary: '#dcddce',
+      secondary: '#B7B8AB',
+      disabled: '#8E8F85',
+      hint: '#8E8F85',
     },
   },
   typography: {
     fontFamily: 'Abril Fatface',
   },
+  divider: '#34322D',
 })
-// customize later
+
 const globalStyles = (
   <GlobalStyles
     styles={{
@@ -93,6 +96,8 @@ const globalStyles = (
     }}
   />
 )
+
+console.log('THEME', theme)
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>

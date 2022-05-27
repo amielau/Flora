@@ -1,19 +1,25 @@
-import React, { useEffect, useState } from 'react'
 import { Box, Button, FormControlLabel, Stack, Switch, TextField, Typography } from '@mui/material'
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker'
+import React from 'react'
 import { Controller, useFieldArray, useForm } from 'react-hook-form'
+import { useAddPlant } from './plants/hooks/useAddPlant'
+
+const defaultValues = { type: '', nickname: '', careInst: '', waterDaily: false }
 
 const AddPlant = () => {
+  const { save } = useAddPlant()
+
   const { handleSubmit, control } = useForm({
-    defaultValues: { type: '', nickname: '', careInst: '', waterDaily: false },
+    defaultValues,
   })
+
   const { fields, append, remove } = useFieldArray({
     control,
     name: 'careAlerts',
   })
 
-  const attemptSubmit = handleSubmit(values => {
-    console.log('values', values)
+  const attemptSubmit = handleSubmit(async values => {
+    await save(values)
   })
 
   return (

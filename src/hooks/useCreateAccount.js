@@ -12,7 +12,7 @@ export const useCreateAccount = () => {
 
   const submit = useCallback(
     async (values, onSuccess) => {
-      const { user, token } = await post('api/users/register', values)
+      const { user, token } = await post('/api/users/register', values)
       setToken(token)
       setUser(user)
       onSuccess()

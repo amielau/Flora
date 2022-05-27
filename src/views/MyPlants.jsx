@@ -1,26 +1,33 @@
+import { Box, LinearProgress, Stack } from '@mui/material'
 import React from 'react'
-import { styled } from '@mui/material/styles'
-import {
-  Card,
-  CardHeader,
-  CardMedia,
-  CardContent,
-  CardActions,
-  Collapse,
-  IconButton,
-  Typography,
-  Button,
-} from '@mui/material'
-import { ExpandMoreIcon, MoreVertIcon } from '@mui/icons-material'
+import { usePlants } from './plants/hooks/usePlants'
+import PlantCard from './plants/PlantCard'
 
-function MyPlants() {
+const MyPlants = () => {
+  const { data, isActive } = usePlants()
+
   return (
-    <div>
-      <Button>MyPlants</Button>
-      <div>
-        <Card sx={{ maxWidth: 345 }}></Card>
-      </div>
-    </div>
+    <Box sx={{ display: 'flex', flexDirection: 'column', flex: '1', height: '100%', alignItems: 'center' }}>
+      {isActive ? (
+        <LinearProgress color='primary' variant='indeterminate' sx={{ height: '4px' }} />
+      ) : (
+        <Box sx={{ height: '4px' }} />
+      )}
+      <Stack
+        spacing={1}
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          height: '100%',
+          minWidth: '300px',
+          width: '50%',
+        }}
+      >
+        {data.map(plant => {
+          return <PlantCard key={plant.id} plant={plant} />
+        })}
+      </Stack>
+    </Box>
   )
 }
 
