@@ -85,7 +85,6 @@ const globalStyles = (
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        right: '5px',
       },
       video: {
         display: 'flex',
